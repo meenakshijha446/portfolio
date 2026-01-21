@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meenakshi Jha | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="header-title">Meenakshi Jha | Portfolio</h1>
+                <div class="header-actions">
+                    <button class="download-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar">
+                <ul class="nav-list">
+                    <li class="nav-item active" data-page="home">
+                        <a href="#home" class="nav-link" data-tooltip="Home">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-page="about">
+                        <a href="#about" class="nav-link" data-tooltip="About">
+                            <i class="fas fa-user"></i>
+                            <span>About</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-page="skills">
+                        <a href="#skills" class="nav-link" data-tooltip="Skills">
+                            <i class="fas fa-code"></i>
+                            <span>Skills</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-page="projects">
+                        <a href="#projects" class="nav-link" data-tooltip="Projects">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Projects</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-page="contact">
+                        <a href="#contact" class="nav-link" data-tooltip="Contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="content">
+                <section id="home" class="page-section active">
+                    <div class="hero-section">
+                        <div class="profile-container">
+                            <div class="profile-image-wrapper">
+                                <img src="images/profile.png" alt="Meenakshi Jha" class="profile-image">
+                                <div class="profile-ring"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-content">
+                            <h2 class="greeting">Hello, I'm</h2>
+                            <h1 class="name">Meenakshi Jha!</h1>
+                            <div class="title-container">
+                                <h3 class="title">Product Engineer</h3>
+                                <span class="separator">|</span>
+                                <h3 class="title">Backend Enthusiast</h3>
+                            </div>
+                            
+                            <p class="description">
+                                I'm a passionate software engineer with 3.7+ years of experience in building scalable backend systems expertise in building scalable backend systems and creating innovative products. 
+                                With a strong foundation in computer science and hands-on experience in modern technologies, I love solving complex problems 
+                                and turning ideas into reality. My journey in tech has been driven by curiosity and a constant desire to learn and grow.
+                            </p>
+                            
+                            <button class="cta-button" id="learnMoreBtn">
+                                <span>Learn More About Me</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="about" class="page-section">
+                    <div class="section-content">
+                        <h2 class="section-title">About Me</h2>
+                        <div class="about-content">
+                            <div class="about-text">
+                                <p>I am a Software Development Engineer with a strong academic foundation in Computer Science 
+                                   and over 3.7+ years of professional experience in backend application development. I have 
+                                   hands-on expertise in Java, Spring Boot, microservices architecture, and relational databases, 
+                                   along with a solid understanding of software development life cycle (SDLC) and Agile methodologies.</p>
+                            </div>
+                        </div>
+
+                        <!-- Experience Section -->
+                        <div class="experience-section">
+                            <h3 class="subsection-title">
+                                <i class="fas fa-briefcase"></i>
+                                Experience
+                            </h3>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-header">
+                                            <h4>Consultant(Product Engineer)</h4>
+                                            <span class="timeline-date">Jun 2022 - Present</span>
+                                        </div>
+                                        <div class="company-info">
+                                            <img src="images/intellect-logo.png" alt="Intellect Design Arena Ltd" class="company-logo">
+                                            <h5>Intellect Design Arena Ltd</h5>
+                                        </div>
+                                        <p>• Owned the design and development of scalable Spring Boot microservices supporting enterprise banking workflows.<br>
+• Built and enhanced REST APIs ensuring high performance, scalability, and security.<br>
+• Implemented Kafka-based asynchronous processing for distributed service communication.<br>
+• Led Bulk Closure and Hasura SideCar modules enabling seamless interoperability across services.<br>
+• Improved release quality by ~20% through CI/CD automation and validations.<br>
+• Troubleshot production issues and reduced incidents by ~30% via root-cause analysis.</p>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">Java</span>
+                                            <span class="tech-tag">Spring MVC</span>
+                                            <span class="tech-tag">Microservices</span>
+                                            <span class="tech-tag">Apache Kafka</span>
+                                            <span class="tech-tag">Spring Boot</span>
+                                            <span class="tech-tag">PostgreSQL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Section -->
+                        <div class="education-section">
+                            <h3 class="subsection-title">
+                                <i class="fas fa-graduation-cap"></i>
+                                Education
+                            </h3>
+                            <div class="education-grid">
+                                <div class="education-card">
+                                    <div class="education-icon">
+                                        <img src="images/srm.png" alt="SRM University" class="education-logo">
+                                    </div>
+                                    <div class="education-details">
+                                        <h4>Bachelor of Technology</h4>
+                                        <h5>Information Technology</h5>
+                                        <p class="education-university">SRM University</p>
+                                        <p class="education-year">2018 - 2022</p>
+                                        <div class="education-achievements">
+                                            <span class="achievement">CGPA: 9.3/10</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills" class="page-section">
+                    <div class="section-content">
+                        <h2 class="section-title">Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3 class="skill-category-title">
+                                    <i class="fas fa-code"></i>
+                                    Programming & Frameworks
+                                </h3>
+                                <div class="skill-items">
+                                    <div class="skill-item">Java</div>
+                                    <div class="skill-item">Spring Boot</div>
+                                    <div class="skill-item">Spring Data JPA</div>
+                                    <div class="skill-item">RESTful APIs</div>
+                                    <div class="skill-item">Hibernate</div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h3 class="skill-category-title">
+                                    <i class="fas fa-network-wired"></i>
+                                    Architecture & Messaging
+                                </h3>
+                                <div class="skill-items">
+                                    <div class="skill-item">Microservices Architecture</div>
+                                    <div class="skill-item">Apache Kafka</div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h3 class="skill-category-title">
+                                    <i class="fas fa-database"></i>
+                                    Databases
+                                </h3>
+                                <div class="skill-items">
+                                    <div class="skill-item">PostgreSQL</div>
+                                    <div class="skill-item">MySQL</div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h3 class="skill-category-title">
+                                    <i class="fas fa-cogs"></i>
+                                    DevOps & Tools
+                                </h3>
+                                <div class="skill-items">
+                                    <div class="skill-item">Docker</div>
+                                    <div class="skill-item">Kubernetes</div>
+                                    <div class="skill-item">Jenkins</div>
+                                    <div class="skill-item">Git</div>
+                                    <div class="skill-item">GitHub/GitLab</div>
+                                    <div class="skill-item">CI/CD Pipelines</div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h3 class="skill-category-title">
+                                    <i class="fas fa-brain"></i>
+                                    Computer Science
+                                </h3>
+                                <div class="skill-items">
+                                    <div class="skill-item">Data Structures & Algorithms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects" class="page-section">
+                    <div class="section-content">
+                        <h2 class="section-title">Projects</h2>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3 class="project-title">Fintech Projects</h3>
+                                    <span class="project-date">Oct 2022 - Present</span>
+                                </div>
+                                <div class="project-company">
+                                    <img src="images/intellect-logo.png" alt="Intellect Design Arena Ltd" class="project-logo">
+                                    <span>Intellect Design Arena Ltd</span>
+                                </div>
+                                <p class="project-description">
+                                    Project was related to ESCROW and VAM (Virtual account management). 
+                                    Developed and maintained scalable financial solutions for enterprise banking workflows.
+                                </p>
+                                <div class="project-skills">
+                                    <span class="project-skill">Java</span>
+                                    <span class="project-skill">Angular</span>
+                                    <span class="project-skill">PostgreSQL</span>
+                                    <span class="project-skill">Spring Boot</span>
+                                    <span class="project-skill">Apache Kafka</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3 class="project-title">Pavement Crack Detection</h3>
+                                    <span class="project-date">Feb 2022 - Apr 2022</span>
+                                </div>
+                                <div class="project-company">
+                                    <img src="images/srm.png" alt="SRM University" class="project-logo">
+                                    <span>SRM University</span>
+                                </div>
+                                <p class="project-description">
+                                    Model was built through feature pyramid and hierarchical boosting network. 
+                                    Input to the model was images and output was to predict whether the given unknown image has crack or not.
+                                </p>
+                                <div class="project-skills">
+                                    <span class="project-skill">Machine Learning</span>
+                                    <span class="project-skill">Computer Vision</span>
+                                    <span class="project-skill">Python</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3 class="project-title">Payment Gateway Integration Website</h3>
+                                    <span class="project-date">Mar 2021 - Apr 2021</span>
+                                </div>
+                                <div class="project-company">
+                                    <i class="fas fa-building project-icon"></i>
+                                    <span>The Sparks Foundation</span>
+                                </div>
+                                <p class="project-description">
+                                    This website is used to do any kind of payments or donations. 
+                                    Implemented secure payment processing and user-friendly donation interface.
+                                </p>
+                                <div class="project-skills">
+                                    <span class="project-skill">HTML</span>
+                                    <span class="project-skill">CSS</span>
+                                    <span class="project-skill">JavaScript</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3 class="project-title">Key logger</h3>
+                                    <span class="project-date">Jan 2021 - Mar 2021</span>
+                                </div>
+                                <div class="project-company">
+                                    <img src="images/srm.png" alt="SRM University" class="project-logo">
+                                    <span>SRM University</span>
+                                </div>
+                                <p class="project-description">
+                                    It strokes all the keys that we type in computer from keyboard.
+                                    Developed system-level application for keyboard input monitoring and logging.
+                                </p>
+                                <div class="project-skills">
+                                    <span class="project-skill">C++</span>
+                                    <span class="project-skill">Python</span>
+                                    <span class="project-skill">System Programming</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="page-section">
+                    <div class="section-content">
+                        <h2 class="section-title">Contact</h2>
+                        <div class="contact-content">
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Phone</h4>
+                                        <p>7667244045</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Email</h4>
+                                        <p>meenakshijha446@gmail.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>LinkedIn</h4>
+                                        <a href="https://www.linkedin.com/in/meenakshi-jha-68096a1a1/" target="_blank" class="contact-link">
+                                            linkedin.com/in/meenakshi-jha-68096a1a1/
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-form">
+                                <h3>Get In Touch</h3>
+                                <form class="form">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                                    </div>
+                                    <button type="submit" class="submit-btn">
+                                        <span>Send Message</span>
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
