@@ -57,6 +57,13 @@
                             <div class="nav-indicator"></div>
                         </a>
                     </li>
+                    <li class="nav-item" data-page="resume">
+                        <a href="#resume" class="nav-link" data-tooltip="Resume">
+                            <i class="fas fa-file-lines"></i>
+                            <span>Resume</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
                     <li class="nav-item" data-page="contact">
                         <a href="#contact" class="nav-link" data-tooltip="Contact">
                             <i class="fas fa-envelope"></i>
@@ -71,6 +78,32 @@
             <main class="content">
                 <section id="home" class="page-section active">
                     <div class="hero-section">
+                        <div class="ambient-bg" aria-hidden="true">
+                            <span class="blob blob-1"></span>
+                            <span class="blob blob-2"></span>
+                            <span class="blob blob-3"></span>
+                            <span class="grain"></span>
+                            <!-- Animated moving lines -->
+                            <div class="animated-lines">
+                                <div class="line line-1"></div>
+                                <div class="line line-2"></div>
+                                <div class="line line-3"></div>
+                                <div class="line line-4"></div>
+                            </div>
+                            <!-- Floating particles -->
+                            <div class="particles">
+                                <span class="particle particle-1"></span>
+                                <span class="particle particle-2"></span>
+                                <span class="particle particle-3"></span>
+                                <span class="particle particle-4"></span>
+                                <span class="particle particle-5"></span>
+                                <span class="particle particle-6"></span>
+                                <span class="particle particle-7"></span>
+                                <span class="particle particle-8"></span>
+                            </div>
+                            <!-- Animated grid -->
+                            <div class="animated-grid"></div>
+                        </div>
                         <div class="profile-container">
                             <div class="profile-image-wrapper">
                                 <img src="images/profile.png" alt="Meenakshi Jha" class="profile-image">
@@ -249,6 +282,9 @@
                         <h2 class="section-title">Projects</h2>
                         <div class="projects-grid">
                             <div class="project-card">
+                                <div class="project-media">
+                                    <img src="images/fintech.png" alt="Fintech project dashboard" class="project-thumb">
+                                </div>
                                 <div class="project-header">
                                     <h3 class="project-title">Fintech Projects</h3>
                                     <span class="project-date">Oct 2022 - Present</span>
@@ -271,6 +307,9 @@
                             </div>
                             
                             <div class="project-card">
+                                <div class="project-media">
+                                    <img src="images/pavement.png" alt="Pavement crack detection visualization" class="project-thumb">
+                                </div>
                                 <div class="project-header">
                                     <h3 class="project-title">Pavement Crack Detection</h3>
                                     <span class="project-date">Feb 2022 - Apr 2022</span>
@@ -291,6 +330,9 @@
                             </div>
                             
                             <div class="project-card">
+                                <div class="project-media">
+                                    <img src="images/ui.png" alt="Payment gateway UI" class="project-thumb">
+                                </div>
                                 <div class="project-header">
                                     <h3 class="project-title">Payment Gateway Integration Website</h3>
                                     <span class="project-date">Mar 2021 - Apr 2021</span>
@@ -311,6 +353,9 @@
                             </div>
                             
                             <div class="project-card">
+                                <div class="project-media">
+                                    <img src="images/keyloggers.png" alt="Keylogger project interface" class="project-thumb">
+                                </div>
                                 <div class="project-header">
                                     <h3 class="project-title">Key logger</h3>
                                     <span class="project-date">Jan 2021 - Mar 2021</span>
@@ -328,6 +373,49 @@
                                     <span class="project-skill">Python</span>
                                     <span class="project-skill">System Programming</span>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="resume" class="page-section">
+                    <div class="section-content">
+                        <h2 class="section-title">Resume</h2>
+                        <p class="section-subtitle">
+                            Download a copy of my resume, or view it online.
+                        </p>
+
+                        <div class="resume-card">
+                            <div class="resume-card-left">
+                                <div class="resume-badge">
+                                    <i class="fas fa-file-lines"></i>
+                                    <span>Meenakshi Jha — Resume</span>
+                                </div>
+                                <div class="resume-highlights">
+                                    <div class="resume-highlight">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span>3.7+ years experience</span>
+                                    </div>
+                                    <div class="resume-highlight">
+                                        <i class="fas fa-code"></i>
+                                        <span>Java • Spring Boot • Microservices</span>
+                                    </div>
+                                    <div class="resume-highlight">
+                                        <i class="fas fa-database"></i>
+                                        <span>PostgreSQL • Kafka • CI/CD</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="resume-actions">
+                                <a class="resume-btn secondary" href="resume/Meenakshi_Jha_resume.pdf" target="_blank" rel="noopener">
+                                    <i class="fas fa-eye"></i>
+                                    <span>View</span>
+                                </a>
+                                <button class="resume-btn primary" id="resumeDownloadBtn" type="button">
+                                    <i class="fas fa-download"></i>
+                                    <span>Download</span>
+                                </button>
                             </div>
                         </div>
                     </div>

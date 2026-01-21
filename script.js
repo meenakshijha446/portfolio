@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
     const downloadBtn = document.getElementById('downloadBtn');
     const learnMoreBtn = document.getElementById('learnMoreBtn');
+    const resumeDownloadBtn = document.getElementById('resumeDownloadBtn');
+    const contentEl = document.querySelector('.content');
 
     // Check for saved theme preference first
     const savedTheme = localStorage.getItem('theme');
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.getElementById(targetPage);
             if (targetSection) {
                 targetSection.classList.add('active');
+                if (contentEl) contentEl.scrollTop = 0;
             }
         });
     });
@@ -54,41 +57,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Download functionality
+    // Download functionality - PDF
+    function downloadResumePDF() {
+        const link = document.createElement('a');
+        link.href = 'resume/Meenakshi_Jha_resume.pdf';
+        link.download = 'Meenakshi_Jha_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     downloadBtn.addEventListener('click', function() {
-        // Create a simple resume download
-        const resumeContent = `
-AASHUTOSH SOLANKI
-Product Engineer | Backend Enthusiast
+        // Prefer showing the Resume section; user can download from there too.
+        navItems.forEach(nav => nav.classList.remove('active'));
+        pageSections.forEach(section => section.classList.remove('active'));
 
-CONTACT
-Email: aashutosh@example.com
-LinkedIn: linkedin.com/in/aashutosh
-GitHub: github.com/aashutosh
+        const resumeNav = document.querySelector('[data-page="resume"]');
+        const resumeSection = document.getElementById('resume');
+        if (resumeNav && resumeSection) {
+            resumeNav.classList.add('active');
+            resumeSection.classList.add('active');
+            if (contentEl) contentEl.scrollTop = 0;
+            return;
+        }
 
-SUMMARY
-Passionate software engineer with expertise in building scalable backend systems and creating innovative products.
-
-EXPERIENCE
-[Your experience details here]
-
-EDUCATION
-[Your education details here]
-
-SKILLS
-[Your skills here]
-        `;
-        
-        const blob = new Blob([resumeContent], { type: 'text/plain' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'Aashutosh_Solanki_Resume.txt';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
+        downloadResumePDF();
     });
+
+    if (resumeDownloadBtn) {
+        resumeDownloadBtn.addEventListener('click', downloadResumePDF);
+    }
 
     // Learn More button
     learnMoreBtn.addEventListener('click', function() {
@@ -115,13 +113,13 @@ SKILLS
     });
 
     // Add parallax effect to hero section
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const heroSection = document.querySelector('.hero-section');
-        if (heroSection) {
-            heroSection.style.transform = `translateY(${scrolled * 0.3}px)`;
-        }
-    });
+    const heroSection = document.querySelector('.hero-section');
+    if (contentEl && heroSection) {
+        contentEl.addEventListener('scroll', () => {
+            const scrolled = contentEl.scrollTop || 0;
+            heroSection.style.transform = `translateY(${scrolled * 0.12}px)`;
+        });
+    }
 
     // Add typing effect to name
     const nameElement = document.querySelector('.name');
@@ -143,28 +141,29 @@ SKILLS
 });
 
 // Add intersection observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            
-            // Add animate class for timeline items and education cards
-            if (entry.target.classList.contains('timeline-item') || 
-                entry.target.classList.contains('education-card')) {
-                entry.target.classList.add('animate');
-            }
-        }
-    });
-}, observerOptions);
-
-// Observe elements for scroll animations
 document.addEventListener('DOMContentLoaded', () => {
+    const contentEl = document.querySelector('.content');
+    const observerOptions = {
+        threshold: 0.12,
+        root: contentEl || null,
+        rootMargin: '0px 0px -60px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+
+                // Add animate class for timeline items and education cards
+                if (entry.target.classList.contains('timeline-item') ||
+                    entry.target.classList.contains('education-card')) {
+                    entry.target.classList.add('animate');
+                }
+            }
+        });
+    }, observerOptions);
+
     const animatedElements = document.querySelectorAll('.section-title, .skills-grid, .projects-grid');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -197,5 +196,15 @@ document.addEventListener('DOMContentLoaded', () => {
     projectCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.15}s`;
         observer.observe(card);
+    });
+
+    // Resume section reveal
+    const resumeBits = document.querySelectorAll('.resume-card, .resume-note, .section-subtitle');
+    resumeBits.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(24px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transitionDelay = `${index * 0.12}s`;
+        observer.observe(el);
     });
 });
